@@ -36,6 +36,7 @@ const alert = false;
       <Header />
       <Detect />
     </client-only>
+    <div>sample</div>
     <Footer />
   </div>
 </template>

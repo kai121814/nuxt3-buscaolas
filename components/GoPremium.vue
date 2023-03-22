@@ -21,7 +21,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" module>
   .go-premium-banner {
     background: #F0F0F0;
   }

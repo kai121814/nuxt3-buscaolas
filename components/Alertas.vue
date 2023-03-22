@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div class="lg:w-9/12 mx-auto lg:my-4 error-bg panel w-full uppercase text-white rounded-sm my-0 h-10" v-if="alert">
-      <span class="flex w-min mx-auto whitespace-nowrap text-sm-1 inline-block align-middle pt-2">
-        <span class="font-bold lg:font-normal" v-html="alertas[0].alerta"></span>
+    <div class="lg:w-9/12 mx-auto lg:my-4 error-bg panel w-full text-white rounded-sm uppercase my-0 h-10" v-if="alert">
+      <span class="flex items-center justify-center mx-auto text-sm-1 ">
+        <span class="font-bold lg:font-normal" v-html="alertas[0].alerta"> </span>
       </span>
     </div>
   </div>
 </template>
 
-<script>
+<script >
   export default {
     data () {
       return {
@@ -26,7 +26,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .error-bg {
     background-color: #C8142E;
   }

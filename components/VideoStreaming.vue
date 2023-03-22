@@ -1,4 +1,5 @@
 <script setup>
+/*
 import { mapGetters} from 'vuex';
 import videojs from "video.js";
 import 'assets/skins/shaka/videojs.min.css';
@@ -78,6 +79,7 @@ export default {
         }
     },
 }
+*/
 </script>
 
 <template>

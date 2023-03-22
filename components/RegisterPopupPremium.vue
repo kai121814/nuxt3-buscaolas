@@ -1,4 +1,4 @@
-<script setup>
+<script setup>/*
 import { mapGetters } from "vuex";
 export default {
   data() {
@@ -86,7 +86,7 @@ export default {
       }
     },
   },
-};
+};*/
 </script>
 
 <template>

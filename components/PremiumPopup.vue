@@ -1,4 +1,5 @@
 <script setup>
+/*
     export default {
         props: {
             mainText: String,
@@ -10,6 +11,7 @@
             },
         }
     }
+*/
 </script>
 
 <template>

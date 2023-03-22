@@ -1,5 +1,8 @@
-<script setup> 
+<script setup>
+  export default {
+  }
 </script>
+
 <template>
     <div class="lg:flex lg:w-9/12 w-11/12 mx-auto lg:mt-24 lg:mb-24 mt-16 mb-32">
         <div class="lg:w-1/3">
@@ -27,11 +30,6 @@
         </div>
     </div>
 </template>
-
-<!-- <script>
-    export default {
-    }
-</script> -->
 
 <style lang="scss" scoped>
   .bg-red {

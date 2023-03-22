@@ -16,11 +16,5 @@
   },
   "dependencies": {
     "sass": "^1.58.3"
-  },
-  "name": "frontend-nuxt3",
-  "description": "Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.",
-  "version": "1.0.0",
-  "main": "tailwind.config.js",
-  "author": "",
-  "license": "ISC"
+  }
 }

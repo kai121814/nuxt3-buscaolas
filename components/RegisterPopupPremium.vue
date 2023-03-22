@@ -1,4 +1,92 @@
 <script setup>
+import { mapGetters } from "vuex";
+export default {
+  data() {
+    return {
+      first_name: "",
+      last_name: "",
+      email: "",
+      password1: "",
+      password2: "",
+      error: null,
+      PlanID: 3,
+      RegisterForm: true,
+    };
+  },
+  computed: {
+    ...mapGetters(["isAuthenticated", "loggedInUser", "IsPremium"]),
+  },
+  methods: {
+    async register() {
+      try {
+        let response_register = await this.$axios.$post(
+          "/api/main/auth/register/",
+          {
+            first_name: this.first_name,
+            last_name: this.last_name,
+            email: this.email,
+            password: this.password1,
+            password2: this.password2,
+          }
+        );
+        var userid = response_register.id;
+        let response_url = await this.$axios.$post("/api/main/gateway/url/", {
+          id: userid,
+          email: this.email.trim(),
+          first_name: this.first_name,
+          last_name: this.last_name,
+          PlanID: 3,
+        });
+        window.location.replace(response_url.gateway.url);
+      } catch (e) {
+        if (!userid) {
+          for (var i in e.response.data) {
+            for (var j in e.response.data[i]) {
+              this.$toast.error(i + ": " + e.response.data[i][j]);
+            }
+          }
+        } else {
+          this.$toast.error(
+            e.response.status + ": algo paso, intentalo de nuevo"
+          );
+        }
+      }
+    },
+    async login() {
+      try {
+        const response_login = await this.$auth.loginWith("local", {
+          data: {
+            email: this.email.trim(),
+            password: this.password1,
+          },
+        });
+        this.Payku();
+      } catch (e) {
+        this.$toast.error("algo paso, intentalo de nuevo1");
+      }
+    },
+    Close() {
+      this.$emit("CloseRegisterEventPre");
+    },
+    async Payku() {
+      if (this.loggedInUser.usuarios_set[0].fue_trial) {
+        this.PlanID = 4;
+      }
+      try {
+        let gateway = await this.$axios.$post("/api/main/gateway/url/", {
+          id: this.loggedInUser.id,
+          email: this.email.trim(),
+          first_name: this.first_name,
+          last_name: this.last_name,
+          PlanID: this.PlanID,
+        });
+        window.location.replace(gateway.gateway.url);
+      } catch (e) {
+        return this.$toast.error("algo paso, intentalo de nuevo");
+      }
+    },
+  },
+};
 </script>
 
 <template>
@@ -8,7 +96,8 @@
         class="
           absolute
           right-8
-          top-16
+          top-7 top-16
+          block
           flex
           text-sm text-white
           leading-7
@@ -276,97 +365,6 @@
   </div>
 </template>
 
-<!--script>
-import { mapGetters } from "vuex";
-export default {
-  data() {
-    return {
-      first_name: "",
-      last_name: "",
-      email: "",
-      password1: "",
-      password2: "",
-      error: null,
-      PlanID: 3,
-      RegisterForm: true,
-    };
-  },
-  computed: {
-    ...mapGetters(["isAuthenticated", "loggedInUser", "IsPremium"]),
-  },
-  methods: {
-    async register() {
-      try {
-        let response_register = await this.$axios.$post(
-          "/api/main/auth/register/",
-          {
-            first_name: this.first_name,
-            last_name: this.last_name,
-            email: this.email,
-            password: this.password1,
-            password2: this.password2,
-          }
-        );
-        var userid = response_register.id;
-        let response_url = await this.$axios.$post("/api/main/gateway/url/", {
-          id: userid,
-          email: this.email.trim(),
-          first_name: this.first_name,
-          last_name: this.last_name,
-          PlanID: 3,
-        });
-        window.location.replace(response_url.gateway.url);
-      } catch (e) {
-        if (!userid) {
-          for (var i in e.response.data) {
-            for (var j in e.response.data[i]) {
-              this.$toast.error(i + ": " + e.response.data[i][j]);
-            }
-          }
-        } else {
-          this.$toast.error(
-            e.response.status + ": algo paso, intentalo de nuevo"
-          );
-        }
-      }
-    },
-    async login() {
-      try {
-        const response_login = await this.$auth.loginWith("local", {
-          data: {
-            email: this.email.trim(),
-            password: this.password1,
-          },
-        });
-        this.Payku();
-      } catch (e) {
-        this.$toast.error("algo paso, intentalo de nuevo1");
-      }
-    },
-    Close() {
-      this.$emit("CloseRegisterEventPre");
-    },
-    async Payku() {
-      if (this.loggedInUser.usuarios_set[0].fue_trial) {
-        this.PlanID = 4;
-      }
-      try {
-        let gateway = await this.$axios.$post("/api/main/gateway/url/", {
-          id: this.loggedInUser.id,
-          email: this.email.trim(),
-          first_name: this.first_name,
-          last_name: this.last_name,
-          PlanID: this.PlanID,
-        });
-        window.location.replace(gateway.gateway.url);
-      } catch (e) {
-        return this.$toast.error("algo paso, intentalo de nuevo");
-      }
-    },
-  },
-};
-</script-->
-
 <style lang="scss" scoped>
 option {
   line-height: 15px !important;
@@ -378,7 +376,6 @@ option {
 }
 select {
   background: url("~/static/img/icon/chevron-down.png") no-repeat right #ffffff;
-  appearance: none;
   -webkit-appearance: none;
   background-position-x: 98%;
 }

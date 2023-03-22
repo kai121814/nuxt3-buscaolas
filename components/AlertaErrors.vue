@@ -1,3 +1,16 @@
+<script setup>
+  // export default {
+  //   props: {
+  //     error: String
+  //   },
+  //   methods: {
+  //     close(){
+  //       this.$emit('CloseError')
+  //     }
+  //   }
+  // }
+</script>
+
 <template>
   <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative m-5" role="alert">
     <strong class="font-bold">Oh no!</strong>
@@ -16,16 +29,3 @@
     </span>
   </div>
 </template>
-
-<script>
-  export default {
-    props: {
-      error: String
-    },
-    methods: {
-      close(){
-        this.$emit('CloseError')
-      }
-    }
-  }
-</script>

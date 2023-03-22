@@ -1,4 +1,58 @@
 <script setup>
+import { mapGetters } from "vuex";
+export default {
+  data() {
+    return {
+      first_name: "",
+      last_name: "",
+      email: "",
+      password1: "",
+      password2: "",
+      error: null,
+      PlanID: 3,
+      RegisterForm: true,
+    };
+  },
+  computed: {
+    ...mapGetters(["isAuthenticated", "loggedInUser", "IsPremium"]),
+  },
+  methods: {
+    registerIni() {
+      this.RegisterForm = false;
+      this.$emit("CloseRegisterEvent");
+      this.$emit("OpenLogin");
+    },
+    async register() {
+      try {
+        let response_register = await this.$axios.$post(
+          "/api/main/auth/register/",
+          {
+            first_name: this.first_name,
+            last_name: this.last_name,
+            email: this.email.trim(),
+            password: this.password1,
+            password2: this.password2,
+          }
+        );
+      } catch (e) {
+        if (!userid) {
+          for (var i in e.response.data) {
+            for (var j in e.response.data[i]) {
+              this.$toast.error(i + ": " + e.response.data[i][j]);
+            }
+          }
+        } else {
+          this.$toast.error(
+            e.response.status + ": algo paso, intentalo de nuevo"
+          );
+        }
+      }
+    },
+    Close() {
+      this.$emit("CloseRegisterEvent");
+    },
+  },
+};
 </script>
 
 <template>
@@ -10,6 +64,7 @@
           right-8
           lg:top-7
           top-16
+          block
           flex
           text-sm text-white
           leading-7
@@ -213,63 +268,6 @@
   </div>
 </template>
 
-<!--script>
-import { mapGetters } from "vuex";
-export default {
-  data() {
-    return {
-      first_name: "",
-      last_name: "",
-      email: "",
-      password1: "",
-      password2: "",
-      error: null,
-      PlanID: 3,
-      RegisterForm: true,
-    };
-  },
-  computed: {
-    ...mapGetters(["isAuthenticated", "loggedInUser", "IsPremium"]),
-  },
-  methods: {
-    registerIni() {
-      this.RegisterForm = false;
-      this.$emit("CloseRegisterEvent");
-      this.$emit("OpenLogin");
-    },
-    async register() {
-      try {
-        let response_register = await this.$axios.$post(
-          "/api/main/auth/register/",
-          {
-            first_name: this.first_name,
-            last_name: this.last_name,
-            email: this.email.trim(),
-            password: this.password1,
-            password2: this.password2,
-          }
-        );
-      } catch (e) {
-        if (!userid) {
-          for (var i in e.response.data) {
-            for (var j in e.response.data[i]) {
-              this.$toast.error(i + ": " + e.response.data[i][j]);
-            }
-          }
-        } else {
-          this.$toast.error(
-            e.response.status + ": algo paso, intentalo de nuevo"
-          );
-        }
-      }
-    },
-    Close() {
-      this.$emit("CloseRegisterEvent");
-    },
-  },
-};
-</script-->
-
 <style lang="scss" scoped>
 option {
   line-height: 15px !important;
@@ -281,7 +279,6 @@ option {
 }
 select {
   background: url("~/static/img/icon/chevron-down.png") no-repeat right #ffffff;
-  appearance: none;
   -webkit-appearance: none;
   background-position-x: 98%;
 }

@@ -1,23 +1,73 @@
+<script setup>
+export default {
+  props: {
+    playa_info: Array,
+  },
+  data() {
+    return {
+      forecasts: [],
+    };
+  },
+  methods: {
+    // async fetchData() {
+    //   await this.$axios.$get('/api/main/home')
+    //     .then(response => {
+    //       this.forecasts = response.query_altura;
+    //     });
+    // }
+  },
+};
+</script>
+
 <template>
   <div class="">
     <div class="premium">
       <div class="cover lg:pt-10 h-96">
-        <Ads location="home-middle"/>
+        <Ads location="home-middle" />
       </div>
     </div>
     <div class="w-9/12 mx-auto text-center">
-      <div class="uppercase font-bold heading text-4xl line-height-46px text-center lg:text-left mb-10 lg:-mt-8 md:-mt-16">
+      <div
+        class="
+          uppercase
+          font-bold
+          heading
+          text-4xl
+          line-height-46px
+          text-center
+          lg:text-left
+          mb-10
+          lg:-mt-8
+          md:-mt-16
+        "
+      >
         PRonóstico ACTUAL
       </div>
     </div>
-    <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:w-9/12 w-11/12 mx-auto lg:bg-transparent bg-white gap-10">
-      <div class="box mb-3 mx-2 md:w-full"
+    <div
+      class="
+        grid
+        lg:grid-cols-3
+        md:grid-cols-2
+        grid-cols-1
+        lg:w-9/12
+        w-11/12
+        mx-auto
+        lg:bg-transparent
+        bg-white
+        gap-10
+      "
+    >
+      <div
+        class="box mb-3 mx-2 md:w-full"
         v-for="forecast in playa_info"
-        :key="forecast.id">
+        :key="forecast.id"
+      >
         <div class="flex">
           <div class="square rounded-sm lg:mr-6 mr-3">
             <NuxtLink :to="'playas/' + forecast.playa.path">
-              <img src="~/static/img/icon/video.png"
+              <img
+                src="~/static/img/icon/video.png"
                 class="image mt-2.5 ml-2"
               />
             </NuxtLink>
@@ -42,8 +92,19 @@
           </div>
         </div>
         <div class="flex">
-          <div class="in-review w-1/2 text-center uppercase text-white font-bold py-3 text-xs"
-            :style="{ 'background-color': forecast.current_rating.color }">
+          <div
+            class="
+              in-review
+              w-1/2
+              text-center
+              uppercase
+              text-white
+              font-bold
+              py-3
+              text-xs
+            "
+            :style="{ 'background-color': forecast.current_rating.color }"
+          >
             {{ forecast.current_rating.rating }}
           </div>
           <div class="text-center w-1/2 mts font-bold py-3 text-xs">
@@ -54,40 +115,24 @@
           <div class="w-1/2 flex py-2.5">
             <img src="~/static/img/icon/windy_1_.png" class="image w-5 h-5" />
             <span class="text-xs font-bold ml-1 mt-0.5"
-              >{{ forecast.speedviento }} km/h</span>
+              >{{ forecast.speedviento }} km/h</span
+            >
           </div>
           <div class="w-1/2 flex py-2.5">
-            <img src="~/static/img/icon/bx-water-2_1_.png"
+            <img
+              src="~/static/img/icon/bx-water-2_1_.png"
               class="image w-5 h-5"
             />
-            <span class="text-xs font-bold ml-1 mt-0.5"> {{ forecast.alturaswell1 }} / {{ forecast.periodoswell1 }}S / {{ forecast.direswell1 }}</span>
+            <span class="text-xs font-bold ml-1 mt-0.5"
+              >{{ forecast.alturaswell1 }} / {{ forecast.periodoswell1 }}S /
+              {{ forecast.direswell1 }}</span
+            >
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  props: {
-    playa_info: Array,
-  },
-  data() {
-    return {
-      forecasts: [],
-    };
-  },
-  methods: {
-    // async fetchData() {
-    //   await this.$axios.$get('/api/main/home')
-    //     .then(response => {
-    //       this.forecasts = response.query_altura;
-    //     });
-    // }
-  },
-};
-</script>
 
 <style lang="scss" scoped>
 .blue {

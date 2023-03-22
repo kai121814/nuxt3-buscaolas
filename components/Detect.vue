@@ -1,8 +1,4 @@
-<template>
-  <div></div>
-</template>
-
-<script>
+<script setup>
 export default {
   mounted () {
     // if adblock is detected through a value that is set local storage, then show the AdBlock message
@@ -48,3 +44,7 @@ export default {
   }
 }
 </script>
+
+<template>
+  <div></div>
+</template>

@@ -1,5 +1,5 @@
 <script setup>
-  const footer = await useFetch("/api/main/home/settings/");
+  const footer = await useFetch("http://api.buscaolas.cl/main/home/settings/");
 </script>
 
 <template>
@@ -12,7 +12,7 @@
         />
         <div class="lg:static absolute lg:bottom-0 bottom-10 w-full">
           <div class="text-white text-xs title box mx-auto">
-            <span class="font-bold">Buscaolas</span>
+            <span class="font-bold">Buscaolas </span>
             <span>Surfcams</span>
           </div>
           <div

@@ -26,34 +26,5 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
- .go-premium-banner {
-    background: #F0F0F0;
-  }
-  .heading {
-    color: #1C496B;
-    width: 440px;
-    height: 120px;
-    font-size: 25px;
-  }
-  .go-premium {
-    background: #FFA800;
-    width: 200px;
-    height: 40px;
-  }
-  .text {
-    color: #3C3C3B;
-    width: 360px;
-    height: 40px;
-  }
-  @media only screen and (max-width: 1023px) {
-    .heading {
-      width: 100%;
-      height: auto;
-    }
-    .text {
-      width: 100%;
-      height: auto;
-    }
-  }
-  </style>
+<style>
+</style>

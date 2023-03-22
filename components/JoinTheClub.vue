@@ -1,4 +1,10 @@
-<script setup> 
+<script setup>
+  export default {
+    data() {
+      return {
+      }
+    }
+  }
 </script>
 
 <template>
@@ -27,15 +33,6 @@
   </div>
   </div>
 </template>
-
-<!-- <script>
-  export default {
-    data() {
-      return {
-      }
-    }
-  }
-</script> -->
 
 <style lang="scss" scoped>
   .join-the-club {

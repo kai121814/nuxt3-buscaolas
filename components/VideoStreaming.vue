@@ -1,11 +1,4 @@
-<template>
-    <video ref="videoPlayer" class="video-js vjs-16-9 visual"></video>
-</template>
-
 <script setup>
-</script>
-
-<!--script>
 import { mapGetters} from 'vuex';
 import videojs from "video.js";
 import 'assets/skins/shaka/videojs.min.css';
@@ -85,4 +78,8 @@ export default {
         }
     },
 }
-</script-->
+</script>
+
+<template>
+    <video ref="videoPlayer" class="video-js vjs-16-9 visual"></video>
+</template>

@@ -1,11 +1,4 @@
 <script setup>
-</script>
-
-<template>
-    <video ref="videoPlayer" class="video-js vjs-16-9 visual"></video>
-</template>
-
-<!--script>
 import { mapGetters} from 'vuex';
 import videojs from "video.js";
 import 'assets/skins/shaka/videojs.min.css';
@@ -288,10 +281,14 @@ export default {
       }
     }
 }
-</script-->
+</script>
+
+<template>
+    <video ref="videoPlayer" class="video-js vjs-16-9 visual"></video>
+</template>
 
 <style lang="scss" scoped>
-.wind-white-icon{
+  .wind-white-icon{
     width: 5px;
     height: 5px;
     background: url('~/static/img/icon/windy_1_white.png');

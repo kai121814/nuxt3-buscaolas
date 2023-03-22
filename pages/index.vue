@@ -24,7 +24,7 @@ useHead({
     },
   ],
 });
-const ArticuloData = await useFetch("/api/main/home");
+const ArticuloData = await useFetch("http://api.buscaolas.cl/main/home");
 // const art = ArticuloData.articulos1.slice(0, 3);
 const alert = false;
 </script>
@@ -36,12 +36,9 @@ const alert = false;
       <Header />
       <Detect />
     </client-only>
-    <div>sample</div>
     <Footer />
   </div>
 </template>
-
-
 
 <style lang="scss" scoped>
 .video-container {

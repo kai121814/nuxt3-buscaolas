@@ -1,4 +1,26 @@
 <script setup>
+  import Swiper from 'swiper/swiper-bundle.min';
+  import 'swiper/swiper-bundle.min.css';
+  export default {
+    props: {
+      articles: Array
+    },
+    data(){
+      return {
+      }
+    },
+    mounted() {
+      new Swiper('.Hero', {
+        loop: true,
+        loopFillGroupWithBlank: true,
+        slidesPerGroup: 1,
+        navigation: {
+          prevEl: '.swiper-button-prev',
+          nextEl: '.swiper-button-next',
+        },
+      })
+    }
+  }
 </script>
 
 <template>
@@ -57,31 +79,6 @@
     </div>
   </div>
 </template>
-
- <!-- <script>
-  import Swiper from 'swiper/swiper-bundle.min';
-  import 'swiper/swiper-bundle.min.css';
-  export default {
-    props: {
-      articles: Array
-    },
-    data(){
-      return {
-      }
-    },
-    mounted() {
-      new Swiper('.Hero', {
-        loop: true,
-        loopFillGroupWithBlank: true,
-        slidesPerGroup: 1,
-        navigation: {
-          prevEl: '.swiper-button-prev',
-          nextEl: '.swiper-button-next',
-        },
-      })
-    }
-  }
-</script> -->
 
 <style lang="scss" scoped>
   .swiper-button-next {

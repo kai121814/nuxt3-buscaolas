@@ -1,7 +1,7 @@
 <script setup>
 // import Swiper from 'swiper/swiper-bundle.min';
 // import 'swiper/swiper-bundle.min.css';
-export default {
+/*export default {
   props: {
     cameras_forecast: Array,
   },
@@ -20,7 +20,7 @@ export default {
     //   }
     // })
   },
-};
+}; */
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup>
-export default {
+/*export default {
   mounted () {
     // if adblock is detected through a value that is set local storage, then show the AdBlock message
     // the `adblockEnabled` value is set in the catch block of the `detectAdBlock` method
@@ -42,7 +42,7 @@ export default {
       })
     }
   }
-}
+} */
 </script>
 
 <template>

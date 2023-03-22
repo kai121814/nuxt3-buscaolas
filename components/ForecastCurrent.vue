@@ -1,5 +1,5 @@
 <script setup>
-export default {
+/*export default {
   props: {
     playa_info: Array,
   },
@@ -16,7 +16,7 @@ export default {
     //     });
     // }
   },
-};
+}; */
 </script>
 
 <template>

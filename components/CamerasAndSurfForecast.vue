@@ -1,16 +1,16 @@
 <script setup>
 // import Swiper from 'swiper/swiper-bundle.min';
 // import 'swiper/swiper-bundle.min.css';
-export default {
-  props: {
-    cameras_forecast: Array,
-  },
-  data() {
-    return {
-      mobile: null,
-    };
-  },
-  async mounted() {
+//export default {
+ // props: {
+ //   cameras_forecast: Array,
+  //},
+ // data() {
+ //   return {
+ //     mobile: null,
+ //   };
+//  },
+//  async mounted() {
     // new Swiper('.Forecast', {
     //   loop: true,
     //   loopFillGroupWithBlank: true,
@@ -19,10 +19,10 @@ export default {
     //     prevEl: '.swiper-button-prev',
     //   }
     // })
-  },
-};
-</script>
+//  },
+//}; 
 
+</script>
 <template>
   <div class="lg:w-9/12 w-11/12 mx-auto mb-10">
     <div

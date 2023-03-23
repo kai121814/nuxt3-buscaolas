@@ -1,10 +1,10 @@
 <script setup>
-export default {
+/*export default {
   data() {
     return {};
   },
   methods: {},
-};
+}; */
 </script>
 
 <template>

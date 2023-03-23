@@ -1,4 +1,5 @@
 <script setup>
+/*
 export default {
   // async asyncData({ $axios }) {
   //   const PlayasData = await $axios.$get(
@@ -30,6 +31,7 @@ export default {
     // },
   },
 };
+*/
 </script>
 
 <template>

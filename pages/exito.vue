@@ -1,11 +1,13 @@
 <script setup>
-  export default {
+ /* 
+ export default {
       async asyncData({ $axios, query }) {
       const InfoData = await $axios.$get("/api/main/user/subscription/" + query.subscription_id);
       return { InfoData };
     },
   }
   // /exito?subscription_id=sub9f069728c2cde58fb3a&id=01ab40d206b967317a000d99c8d2eb86ef11f39e4340b1a7655bf632b81f1d0d
+  */
 </script>
 
 <template>

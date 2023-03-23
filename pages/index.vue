@@ -1,5 +1,5 @@
 <script setup>
-useHead({
+/*useHead({
   title: "Camaras de surf en vivo - Buscaolas",
   meta: [
     {
@@ -27,6 +27,7 @@ useHead({
 const ArticuloData = await useFetch("http://api.buscaolas.cl/main/home");
 // const art = ArticuloData.articulos1.slice(0, 3);
 const alert = false;
+*/
 </script>
 
 

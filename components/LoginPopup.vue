@@ -1,5 +1,5 @@
 <script setup>
-import alertaErrors from "./AlertaErrors.vue";
+/* import alertaErrors from "./AlertaErrors.vue";
 export default {
   components: { alertaErrors },
   data() {
@@ -51,6 +51,7 @@ export default {
     },
   },
 };
+*/
 </script>
 
 <template>

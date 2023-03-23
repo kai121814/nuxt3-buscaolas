@@ -1,5 +1,5 @@
 <script setup>
-  import Swiper from 'swiper/swiper-bundle.min';
+  /* import Swiper from 'swiper/swiper-bundle.min';
   import 'swiper/swiper-bundle.min.css';
   export default {
     props: {
@@ -20,7 +20,7 @@
         },
       })
     }
-  }
+  } */
 </script>
 
 <template>

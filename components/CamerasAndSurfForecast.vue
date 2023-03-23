@@ -19,10 +19,10 @@
     //     prevEl: '.swiper-button-prev',
     //   }
     // })
-  },
-}; */
-</script>
+//  },
+//}; 
 
+</script>
 <template>
   <div class="lg:w-9/12 w-11/12 mx-auto mb-10">
     <div

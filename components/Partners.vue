@@ -1,5 +1,5 @@
 <script setup>
-export default {
+  /*export default {
     props: {
       partners: Array
     },
@@ -19,7 +19,7 @@ export default {
           });
       }
     }
-  }
+  }*/
 </script>
 
 <template>

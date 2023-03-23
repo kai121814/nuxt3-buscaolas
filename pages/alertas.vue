@@ -1,5 +1,5 @@
 <script setup>
-import { mapGetters } from "vuex";
+/*import { mapGetters } from "vuex";
   export default {
     components: {
     },
@@ -15,7 +15,7 @@ import { mapGetters } from "vuex";
         this.$router.push({ path: "/" })
       }
     },
-  }
+  } */
 </script>
 
 <template>

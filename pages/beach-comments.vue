@@ -1,5 +1,5 @@
 <script setup>
-  export default {
+/*  export default {
     data() {
       return {
         lists: [
@@ -21,7 +21,7 @@
         ]
       }
     }
-  }
+  } */
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup>
-  const footer = await useFetch("http://api.buscaolas.cl/main/home/settings/");
+ // const footer = await useFetch("http://api.buscaolas.cl/main/home/settings/");
 </script>
 
 <template>

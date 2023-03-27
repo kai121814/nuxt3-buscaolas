@@ -17,7 +17,7 @@
 <template>
     <div class="mx-auto w-800 bg-gradient shadow-md z-1 mt-10">
         <div class="relative">
-            <button class="absolute right-8 lg:top-7 top-16 block flex text-sm text-white leading-7" @click="Close()">cerrar
+            <button class="absolute right-8 lg:top-7 top-16 flex text-sm text-white leading-7" @click="Close()">cerrar
                 <span class="close-btn block ml-2"></span>
             </button>
             <img src="~/static/img/banner/surfing-VGSBTXB_3.png" class="w-800 h-474 lg:block hidden" />

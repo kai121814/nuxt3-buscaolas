@@ -1,5 +1,5 @@
 <script setup>
-  export default { 
+  /*export default { 
       data () {
           return {
               register1: false
@@ -10,7 +10,7 @@
               this.register1 = true
           }
       }
-  }
+  }*/
 </script>
 
 <template>

@@ -96,8 +96,6 @@ export default {
         class="
           absolute
           right-8
-          top-7 top-16
-          block
           flex
           text-sm text-white
           leading-7
@@ -376,6 +374,7 @@ option {
 }
 select {
   background: url("~/static/img/icon/chevron-down.png") no-repeat right #ffffff;
+  appearance: none;
   -webkit-appearance: none;
   background-position-x: 98%;
 }

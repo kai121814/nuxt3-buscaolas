@@ -1,5 +1,5 @@
 <script setup>
-  export default {
+  /*export default {
     data() {
       return {
         password1: null,
@@ -28,7 +28,7 @@
         }
       }
     }
-  }
+  }*/
 </script>
 
 <template>
